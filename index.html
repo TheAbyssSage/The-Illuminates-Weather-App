@@ -18,7 +18,7 @@
     <!-- Navgation Bar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <img src="images/logo_t.png" alt="Weather App" width="70" height="me-auto" class="d-inline-block align-text-top">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Dropdown
+                            Categories
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="Seperate_UI/surfers.html">Surfers</a></li>
@@ -47,19 +47,41 @@
     </nav>
 
 
-    <!-- Intro -->
-    <div class="container mt-4">
-        <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-            <div class="col-md-6 px-0">
-                <h1 class="display-4 fst-italic">Welcome to the Weather App</h1>
-                <p class="lead my-3">Get the latest weather updates for your favorite cities around the world.</p>
-            </div>
+    <!-- Triangle animation -->
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 500px;">
+        <div id="triangle">
+            <svg id="Layer_1" data-name="Layer 1" version="1.1" viewBox="0 0 2000 2000">
+                <polygon class="cls-1"
+                    points="928 781 1021 951 784.5 1371.97 1618 1371.97 1530.32 1544 509 1539 928 781">
+                </polygon>
+                <polygon class="cls-3"
+                    points="1618 1371.97 784.5 1371.97 874.93 1211 1346 1211 923.1 456 1110.06 456 1618 1371.97">
+                </polygon>
+                <g id="Layer_2" data-name="Layer 2">
+                    <polygon class="cls-2"
+                        points="418 1372.74 509 1539 928 781 1162.32 1211 1346 1211 923.1 456 418 1372.74"></polygon>
+                </g>
+            </svg>
         </div>
     </div>
 
 
-    
 
+    <!-- Intro -->
+    <div class="container mt-4">
+        <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+            <div class="col-md-6 px-0">
+                <div class="card p-4 bg-dark">
+                    <h1 class="text-center mb-4">Weather App</h1>
+                    <div class="mb-3">
+                        <label for="cityInput" class="form-label">Enter City Name:</label>
+                        <input type="text" class="form-control" id="cityInput" placeholder="e.g., New York" />
+                    </div>
+                    <button id="getWeatherBtn" class="btn btn-primary w-100">Get Weather</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <div class="container mt-4">
