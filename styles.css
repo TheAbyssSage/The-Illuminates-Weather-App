@@ -218,30 +218,10 @@
 
 .dramatic-goal {
     font-size: 2.8rem;
-    color: #FFCA00;
+    color: red;
     margin-top: 2rem;
     font-weight: 700;
     text-shadow: 0 0 25px rgba(255, 213, 0, 0.6), 0 4px 20px rgba(0, 0, 0, 0.8);
     animation: dramaticPulse 2.5s ease-in-out infinite;
     letter-spacing: 1px;
-}
-
-@keyframes dramaticGlow {
-    0%, 100% {
-        text-shadow: 0 0 20px rgba(255, 213, 0, 0.5), 0 4px 15px rgba(0, 0, 0, 0.8);
-    }
-    50% {
-        text-shadow: 0 0 40px rgba(255, 213, 0, 0.8), 0 4px 25px rgba(0, 0, 0, 0.8);
-    }
-}
-
-@keyframes dramaticPulse {
-    0%, 100% {
-        transform: scale(1);
-        text-shadow: 0 0 25px rgba(255, 213, 0, 0.6), 0 4px 20px rgba(0, 0, 0, 0.8);
-    }
-    50% {
-        transform: scale(1.05);
-        text-shadow: 0 0 40px rgba(255, 213, 0, 0.9), 0 4px 30px rgba(0, 0, 0, 0.8);
-    }
 }
