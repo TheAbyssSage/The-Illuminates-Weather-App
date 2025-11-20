@@ -12,8 +12,13 @@ updateDatalist();
 function updateDatalist() {
     datalist.innerHTML = '';
     savedLocations.forEach(loc => {
-        const option = document.createElement('option') || null;
-        option.value = loc;
+        const option = document.createElement('li');
+        option.innerText = `${loc}`;
+        option.style.cursor = 'pointer';
+        option.addEventListener('click', () => {
+            input.value = loc;
+            showStuff(loc);
+        });
         datalist.appendChild(option);
     });
 }
@@ -73,6 +78,7 @@ function displayData(data) {
     const humidity = document.getElementById('humidity') || null;
     const location = document.getElementById('city') || null;
     const country = document.getElementById('country') || null;
+    const huntingtime = document.getElementById('hunting') || null;
     // putting all read data from API into const
     const WINDSPEED = data.wind.speed;
     const WINDDIRECTION = data.wind.deg;
@@ -114,6 +120,8 @@ function displayData(data) {
         location.innerHTML = `${data.name}`;
     if (country)
         country.innerHTML = `${data.sys.country}`;
+    if (huntingtime)
+        huntingtime.innerHTML = nightHunt(data);
 
 }
 
@@ -160,4 +168,31 @@ function getWeatherEmoji(data) {
     }
     
     return '☁️'; // default
+}
+
+function nightHunt(data) {
+    const sunriseTimestamp = data.sys.sunrise;
+    const sunsetTimestamp = data.sys.sunset;
+    const currentTimestamp = Math.floor(Date.now() / 1000);
+    const cloudCoverage = data.clouds.all;
+    const weatherId = data.weather[0].id;
+    
+    // Check if it's nighttime
+    const isNight = currentTimestamp < sunriseTimestamp || currentTimestamp > sunsetTimestamp;
+    
+    if (isNight) {
+        return `<span class="vampire">🧛‍♂️ </span>Perfect time for a hunt!<span class="vampire"> 🧛‍♀️</span>`;
+    }
+    
+    // Daytime - check cloud coverage and weather conditions
+    // Heavy clouds (>80%) or rain/snow/storm provides good cover
+    if (cloudCoverage > 80 || weatherId < 700) {
+        return `<span class="vampire">🧛‍♂️ </span> Safe to hunt! Heavy clouds or precipitation provide cover.<span class="vampire"> 🧛‍♀️</span>`;
+    }
+    
+    if (cloudCoverage > 50) {
+        return `<span class="vampire">⚠️ </span> Risky hunt. Moderate cloud cover - proceed with caution.<span class="vampire">⚠️ </span>`;
+    }
+    
+    return `<span class="vampire">☀️ </span> Stay inside! The sun is too strong.<span class="vampire">☀️ </span>`;
 }
