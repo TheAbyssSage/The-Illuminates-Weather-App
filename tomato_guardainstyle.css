@@ -1,23 +1,33 @@
 .bg {
-    margin: 40px auto 0;
+    margin: 60px auto 0;
     background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
     display: flex;
-    width: 40%;
+    width: 50%;
     height: auto;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
 }
 
+.bg:hover {
+    transform: scale(1.05);
+}
+
+body {
+    scroll-behavior: smooth;
+}
 
 .home {
-    background-color: antiquewhite;
+    background: linear-gradient(135deg, #f5e6d3 0%, #e8d4b8 50%, #d4c4a8 100%);
+    min-height: 100vh;
 }
 
 /* Font */
 .crimson-text-regular {
-  font-family: "Crimson Text", serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 
@@ -27,7 +37,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     padding: 1rem 0;
     position: sticky;
-    top:0;
+    top: 0;
     width: 100%;
     z-index: 1000;
 }
@@ -85,4 +95,78 @@
 .dropdown-item:hover {
     background-color: #FFD500;
     color: #000;
+}
+
+/* Divider */
+.divider {
+    width: 300px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent 0%, #8B4513 50%, transparent 100%);
+    margin: 2rem auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* About Box */
+.about-box {
+    animation: slideDown 0.6s ease-out;
+}
+
+.about-box h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #8B4513;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+}
+
+.about-box h5 {
+    font-size: 1.5rem;
+    color: #A0522D;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+/* Weather Section */
+.weather {
+    padding: 2rem 0;
+}
+
+.weather .col {
+    background: rgba(255, 255, 255, 0.8);
+    border: none !important;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.weather .col:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.weather h3 {
+    color: #8B4513;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.weather h4 {
+    color: #A0522D;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.weather p {
+    color: #8B4513;
+    font-size: 1.1rem;
+}
+
+.weather img {
+    transition: transform 0.3s ease;
+    max-width: 100%;
+}
+
+.weather img:hover {
+    transform: scale(1.08);
 }
