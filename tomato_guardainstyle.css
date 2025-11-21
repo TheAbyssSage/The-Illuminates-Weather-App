@@ -6,7 +6,7 @@
     display: flex;
     width: 50%;
     height: auto;
-    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2)) !important;
     transition: transform 0.3s ease;
 }
 
@@ -19,7 +19,7 @@ body {
 }
 
 .home {
-    background: linear-gradient(135deg, #f5e6d3 0%, #e8d4b8 50%, #d4c4a8 100%);
+    background: linear-gradient(135deg, #f5e6d3 0%, #e8d4b8 50%, #d4c4a8 100%) !important;
     min-height: 100vh;
 }
 
@@ -82,7 +82,7 @@ body {
 .divider {
     width: 300px;
     height: 4px;
-    background: linear-gradient(90deg, transparent 0%, #8B4513 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, #8B4513 50%, transparent 100%) !important;
     margin: 2rem auto;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
