@@ -113,14 +113,12 @@
         <!-- Location and time -->
         <div class="container mt-4 w-50 time">
             <div class=" w-100 mx-auto rounded-3 shadow p-3">
-                <div class="row g-3 align-items-start">
-                    <div class="primary col-12 col-md-6 text-center text-md-start d-flex flex-column">
-                        <h4 class="primary mb-1">Place:</h4>
+                <div class="d-flex flex-row justify-content-between align-content-center align-items-center flex-wrap text-center h4">
+                    <div class="primary d-flex flex-column">
                         <div class="primary fw-semibold" id="city">Location:</div>
                         <div class="primary" id="country">Country</div>
                     </div>
-                    <div class="col-12 col-md-6 text-center text-md-end d-flex flex-column">
-                        <h4 class="text-uppercase primary mb-1">Time:</h4>
+                    <div>
                         <div class="primary fw-semibold" id="currenttime">04:50 PM</div>
                     </div>
                 </div>
@@ -129,18 +127,15 @@
 
 
         <!-- weather display -->
-        <div class="d-flex justify-content-center mt-5 centered font position-sticky top-0 border-bottom time">
+        <div class="d-flex justify-content-center centered font position-sticky top-0 time">
             <div class="d-flex flex-column p-5 container time">
 
-                <div class="d-flex flex-row justify-content-evenly text-box align-items-center p-3 mt-5">
+                <div class="d-flex flex-row justify-content-evenly text-box flex-wrap align-items-center p-3 mt-5">
                     <div class="d-flex flex-column align-items-center">
                         <div class="windSpeed-unit">The windspeed is:</div>
                         <div class="windSpeed" id="windSpeed"></div>
                     </div>
                     <div class="text-center">
-                        <div class="windDirection ">
-                            <img src="Images/arrow.png" class="windDirection-img" id="windDirection-img">
-                        </div>
                         <div class="windDirection mt-3" id="windDirection">
 
                         </div>

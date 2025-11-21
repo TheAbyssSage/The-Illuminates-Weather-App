@@ -10,13 +10,13 @@ updateDatalist();
 // Function to update the datalist
 function updateDatalist() {
     datalist.innerHTML = '';
-    
+
     // Limit to max 10 locations
     if (savedLocations.length > 10) {
         savedLocations.shift(); // Remove first (oldest) item
         localStorage.setItem('locations', JSON.stringify(savedLocations));
     }
-    
+
     // Create list items for each saved location
     savedLocations.forEach(loc => {
         const option = document.createElement('li');
@@ -58,7 +58,7 @@ document.getElementById("search-btn").addEventListener("click", (event) => {
 
 // elements for favorites list
 const addToFavoritesButton = document.getElementById('add-to-favorites');
-const favDatalist = document.getElementById('favLocations'); 
+const favDatalist = document.getElementById('favLocations');
 
 // load saved favorite locations from localstorage
 let savedFavLocations = JSON.parse(localStorage.getItem('favLocations')) || [];
@@ -76,8 +76,8 @@ function updateFavDatalist() {
 
     // Limit to max 10 locations
     if (savedFavLocations.length > 10) {
-        savedFavLocations.shift(); 
-        localStorage.setItem('favLocations', JSON.stringify(savedFavLocations)); 
+        savedFavLocations.shift();
+        localStorage.setItem('favLocations', JSON.stringify(savedFavLocations));
     }
 
     // Create list items
@@ -176,7 +176,9 @@ function displayData(data) {
     if (windSpeed)
         windSpeed.innerHTML = `${WINDSPEED} <span class="windSpeed-unit">m/s</span>`;
     if (windDirection)
-        windDirection.innerHTML = `The wind direction is ${WINDDIRECTION} degrees`;
+        windDirection.innerHTML = `<img src="Images/arrow-new.png" style="transform: rotate(${WINDDIRECTION}deg)" class="windDirection-img" id="windDirection-img">
+        <br>
+        The wind direction is ${WINDDIRECTION}°`;
     if (rain)
         rain.innerHTML = `${getWeatherEmoji(data)}`;
     if (temperature)
