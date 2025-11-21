@@ -1,6 +1,5 @@
 const API_KEY = "77f36ebced508f08d1bb597493dd3030"; // totally hidden free API
 
-// ----------------------------------------------------------------------------------- underneath here by chatgpt, no clue yet how to integrate this in functions below
 const input = document.getElementById('locationForm');
 const datalist = document.getElementById('locationList');
 
@@ -32,7 +31,6 @@ function updateDatalist() {
     });
 }
 
-// ----------------------------------------------------------------------------------- above here by chatgpt
 
 // Single event listener for search button
 document.getElementById("search-btn").addEventListener("click", (event) => {
