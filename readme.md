@@ -1,6 +1,4 @@
-<h1>The-Illuminates-Weather-App<h1>
-
-<hr>
+<h1>The-Illuminates-Weather-App</h1>
 
 <p>This is a weather app project conducted and produced by me and my team mates for a project, for school.</p>
 
