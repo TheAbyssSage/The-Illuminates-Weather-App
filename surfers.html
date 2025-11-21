@@ -57,9 +57,20 @@
 
                         </ul>
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Favorites
+                        </a>
+                        <ul class="dropdown-menu text-white ps-2" id="favLocations">
+                            <!-- Populated by app.js (updateFavDatalist) -->
+                        </ul>
+                    </li>
                 </ul>
 
                 <form class="d-flex" role="search">
+                    <span class="favButton" id="add-to-favorites">⭐</span>
                     <input class="form-control me-2" type="search" placeholder="Surfs up 🏄 🏄‍♀️ 🏄‍♂️"
                         aria-label="Search" id="locationForm" />
                     <button class="btn btn-outline-success" type="submit" id="search-btn">Search</button>
