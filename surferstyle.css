@@ -2,8 +2,8 @@
     --primary: #101047;
     --primary-light: #151055;
     --secondary: #008dc5;
-    --background: #0C0004;
-    --background-light: #242f61;
+    /* --background: #0C0004; */
+    /* --background-light: #242f61; */
     --accent: #1100aa;
 }
 
@@ -24,7 +24,8 @@ body {
 .font {
     font-family: "Original Surfer", serif;
     font-style: normal;
-    font-weight: 700; /* 400 or 700 */
+    font-weight: 700;
+    /* 400 or 700 */
 }
 
 .container {
@@ -37,10 +38,11 @@ body {
     border-radius: 20px;
 }
 
-.primary{
+.primary {
     color: var(--primary);
 }
-.primary-light{
+
+.primary-light {
     color: var(--primary-light);
     font-weight: 400;
 }
@@ -83,7 +85,7 @@ body {
 
 .weather-icon {
     font-size: 5rem;
-    padding: 5px; 
+    padding: 5px;
 }
 
 .current-weather {
@@ -103,4 +105,99 @@ body {
 
 .vampire {
     font-size: 2.5rem;
+}
+
+
+
+
+/* Wave pattern */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: hsl(195, 100%, 7%);
+}
+
+/* #canvas {
+    margin: 0 auto;
+    display: block;
+    filter: url('#shadowed-goo');
+} */
+
+svg {
+    display: none;
+}
+
+
+
+
+/* Make the canvas a full-screen background behind content */
+#canvas {
+    position: fixed;
+    /* sit behind as a background */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* ensure the wave fills the viewport */
+    pointer-events: none;
+    /* let clicks pass through */
+    z-index: 0;
+    /* behind other content */
+    margin: 0;
+    display: block;
+    filter: url('#shadowed-goo');
+}
+
+/* Ensure body and main containers don't block the wave visually */
+
+
+/* Make big box transparent and layered above the canvas */
+.container {
+    background-color: transparent;
+    /* transparent bg to see wave */
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    /* above the canvas */
+}
+
+/* Optional: semi-transparent inner boxes for readability */
+.text-box .time {
+    background: rgba(255, 255, 255, 0.789);
+    /* subtle glassy bg */
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    /* adds glass effect */
+}
+
+/* Pull the weather display up to overlap the wave */
+.centered.font.position-sticky.top-0.border-bottom {
+    margin-top: -120px;
+    /* adjust overlap depth to taste */
+    z-index: 2;
+    /* above canvas */
+    position: relative;
+    /* maintain layout context */
+}
+
+/* Fix arrow rotation unit */
+.windDirection-img {
+    max-width: 40%;
+    transform: rotate(45deg);
+    /* 'deg' unit required */
+}
+
+/* Keep page background dark but still see canvas */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    /* let canvas show */
+}
+
+/* Hide the inline SVG element itself but keep filter available */
+svg {
+    display: none;
 }
