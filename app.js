@@ -158,10 +158,13 @@ function displayData(data) {
     // extra steps required for turning unix seconds into readable time    
     const sunriseTimestamp = data.sys.sunrise;
     const sunsetTimestamp = data.sys.sunset;
-    const sunriseDate = new Date(sunriseTimestamp * 1000);
-    const sunsetDate = new Date(sunsetTimestamp * 1000);
-    const SUNRISE = sunriseDate.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
-    const SUNSET = sunsetDate.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+    const timezone = data.timezone; // timezone offset in seconds
+    const sunriseDate = new Date((sunriseTimestamp + timezone) * 1000);
+    const sunsetDate = new Date((sunsetTimestamp + timezone) * 1000);
+    const currentDate = new Date(Date.now() + timezone * 1000);
+    const SUNRISE = sunriseDate.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
+    const SUNSET = sunsetDate.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
+    const CURRENTTIME = currentDate.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
 
     const CLOUDCOVERAGE = data.clouds.all;
     const HUMIDITY = data.main.humidity;
@@ -172,7 +175,7 @@ function displayData(data) {
     // writing all cons into innerHTML
     // null checks to avoid errors if element not found
     if (currentTime)
-        currentTime.innerHTML = `${new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}`;
+        currentTime.innerHTML = `${CURRENTTIME}`;
     if (windSpeed)
         windSpeed.innerHTML = `${WINDSPEED} <span class="windSpeed-unit">m/s</span>`;
     if (windDirection)
