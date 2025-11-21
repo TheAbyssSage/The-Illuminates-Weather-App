@@ -30,6 +30,18 @@ body {
     font-style: normal;
 }
 
+.text-size {
+    font-size: 1.2rem;
+}
+
+.emoji {
+    font-size: 5rem;
+}
+
+.less-margin {
+    margin-bottom: -45px;
+}
+
 
 /* Navigation bar */
 .navbar {

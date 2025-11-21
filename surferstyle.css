@@ -2,7 +2,7 @@
 
 /* Theme vars */
 :root {
-    --primary: #ececec;
+    --primary: #ffffff;
     --primary-light: #151055;
     --secondary: #f3f6f7;
     --accent: #1100aa;
@@ -85,22 +85,22 @@ body {
 
 /* Colors */
 .primary { color: var(--primary); }
-.primary-light { color: var(--primary-light); font-weight: 400; }
+.primary-light { color: var(--primary); font-weight: 400; }
 
 /* Components */
 .windSpeed { font-size: 4rem; font-weight: 700; color: var(--primary); }
-.windSpeed-unit { font-size: 2rem; font-weight: 400; color: var(--primary-light); }
+.windSpeed-unit { font-size: 2rem; font-weight: 400; color: var(--primary); }
 
 .temperature { font-size: 5rem; font-weight: 700; color: var(--primary); }
-.temperature-unit { font-size: 2.5rem; font-weight: 400; color: var(--primary-light); }
+.temperature-unit { font-size: 2.5rem; font-weight: 400; color: var(--primary); }
 
 .windDirection-img {
-    max-width: 40%;
+    max-width: 30%;
     transform: rotate(45deg);
 }
 
 .windDirection {
-    color: var(--primary-light);
+    color: var(--primary);
     font-weight: 400;
     font-size: 1.5rem;
     margin-top: -25px;
@@ -109,7 +109,7 @@ body {
 .weather-icon { font-size: 5rem; padding: 5px; }
 
 .current-weather {
-    color: var(--primary-light);
+    color: var(--primary);
     font-weight: 400;
     font-size: 1.5rem;
     margin-top: -25px;
